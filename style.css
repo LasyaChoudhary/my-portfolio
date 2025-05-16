@@ -56,7 +56,7 @@ section::before {
 
 .nav-links a {
   text-decoration: none;
-  color: #0073e6;
+  color: #3f556b;
   font-weight: 600;
 }
 
@@ -72,7 +72,7 @@ section {
 
 .section-title {
   font-size: 2rem;
-  color: #25365d;
+  color: #2362a1;
   margin-bottom: 1rem;
   padding-left: 38px;
 
@@ -202,6 +202,7 @@ section {
 /* Projects Section */
 .project-item {
   display: none;
+  margin-top: 18px;
 }
 
 .project-item.active {
@@ -246,7 +247,7 @@ button:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  background-color: rgba(10, 10, 10, 0.6); /* semi-transparent black */
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -319,7 +320,7 @@ button:hover {
    padding-left: 40px;
 }
 .prev{
-margin-left: 36px;
+margin-left: 44px;
 
 }
 .project {
@@ -535,4 +536,198 @@ section {
   pointer-events: none;
   cursor: not-allowed;
 }
+
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: 600;
+  padding: 0.2rem 0;
+  transition: color 0.3s ease, opacity 0.2s ease;
+}
+
+/* Underline effect using ::after */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #0073e6;
+  transition: width 0.3s ease;
+}
+
+/* On hover, show underline */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* On hover, change text color slightly */
+.nav-links a:hover {
+  color: #005bb5;
+  opacity: 0.85;
+}
+
+/* On click (active), reduce opacity briefly */
+.nav-links a:active {
+  opacity: 0.6;
+  transition: opacity 0.1s ease;
+}
+
+
+/* Default modal content - light mode */
+#modal .modal-content {
+  background-color: #fff;
+  color: #000;
+  /* ... other styles ... */
+}
+
+/* Dark mode modal content */
+.dark-theme #modal .modal-content {
+  background-color: #161616;  /* dark background */
+  color: #eee;             /* light text */
+  box-shadow: 0 5px 15px rgba(255,255,255,0.1); /* subtle light shadow */
+}
+
+/* Also style the close button for dark mode */
+.dark-theme .close-btn {
+  color: #ddd;
+}
+
+
+
+
+.dark-theme .activities-content {
+  background-color: #222;  /* dark background */
+  color: #eee;             /* light text */
+  border-color: #555;      /* softer border */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Also change text inside .tech and .tech1 if needed */
+.dark-theme .tech, 
+.dark-theme .tech1 {
+  color: #ccc;
+}
+
+/* Adjust nav buttons in dark mode */
+.dark-theme .nav-btn {
+  color: #ccc;
+}
+
+.dark-theme .nav-btn:hover {
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+/* Contact Section Styling */
+#contact {
+  padding: 60px 20px;
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+}
+
+.section1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  padding: 8px 0;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

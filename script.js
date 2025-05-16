@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Role Rotator
-  const roles = [ "Frontend Developer", "Web Developer", "Backend Developer"];
-  let roleIndex = 0;
-  const roleElement = document.getElementById("role");
-  roleElement.textContent = roles[0];
+const roles = ["Frontend Developer", "Web Developer", "Backend Developer"];
+let roleIndex = 0;
+const roleElement = document.getElementById("role");
 
-  setInterval(() => {
+function showRole() {
+  roleElement.textContent = roles[roleIndex];
+  roleElement.classList.add("slide-down");
+
+  setTimeout(() => {
+    roleElement.classList.remove("slide-down");
     roleIndex = (roleIndex + 1) % roles.length;
-    roleElement.textContent = roles[roleIndex];
-  }, 2500);
+    showRole();
+  }, 2400);
+}
+
+showRole();
+
+
+
 
   // Modal Logic (declare modal before using in slider controls)
   const modal = document.getElementById("modal");
@@ -168,5 +177,10 @@ navLinks.forEach(link => {
     // Show the target section
     document.getElementById(targetId).classList.add('active');
   });
+});
+const toggle = document.getElementById('theme-toggle');
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
 });
 
