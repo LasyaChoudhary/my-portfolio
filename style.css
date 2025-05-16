@@ -329,3 +329,210 @@ margin-left: 36px;
 .software {
   margin-top: 8px;
 }
+
+
+.activities-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* keep box + buttons centered */
+  gap: 15px;
+  padding-top: 38px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.8em;
+  cursor: pointer;
+  padding: 0 10px;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: white;
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.tech {
+  margin-top: 6px;
+}
+.tech1 {
+  margin-top: 4px;
+}
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.activities-content {
+  width: 500px;
+  min-height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 1em;
+  font-weight: 500;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  border: 3px solid #182848;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  position: relative;
+  transition: height 0.4s ease; /* Smooth height transition */
+  overflow: hidden;
+}
+
+.activity {
+  display: none;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.5s ease, transform 0.4s ease;
+}
+
+.activity.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.activities-content {
+  /* Add this */
+  animation: fadeBackground 0.5s ease;
+}
+
+@keyframes fadeBackground {
+  from {
+    background-color: #ececec;
+  }
+  to {
+    background-color: #f9f9f9;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px; /* This ensures space when scrolling to anchor */
+}
+
+
+#contact {
+  max-width: 360px;   /* Reduced width */
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#contact h2.section-title {
+  font-size: 1.5rem;  /* Smaller title */
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.85rem;  /* Smaller label font */
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;  /* Reduced padding */
+  font-size: 0.85rem;       /* Smaller input font */
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+  transition: 0.2s ease;
+  margin-bottom: 0.8rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 80px;  /* Smaller textarea height */
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #4a90e2, #357ABD);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #357ABD, #2a5e9e);
+  box-shadow: 0 5px 10px rgba(42, 94, 158, 0.3);
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+  #contact {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  #contact h2.section-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+#contact {
+  margin-top: 80px; /* Pushes the contact section below the fixed/sticky navbar */
+  padding: 1.5rem;
+}
+#contact {
+  padding-top: 100px;  /* Pushes content down */
+  margin-top: 20px;
+}
+section {
+  scroll-margin-top: 100px;
+}
+
+#prevProject:disabled,
+#nextProject:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Role Rotator
-  const roles = ["Software Developer", "Frontend Developer", "Web Developer", "Backend Developer"];
+  const roles = [ "Frontend Developer", "Web Developer", "Backend Developer"];
   let roleIndex = 0;
   const roleElement = document.getElementById("role");
   roleElement.textContent = roles[0];
@@ -16,29 +16,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalDescription = document.getElementById("modal-description");
   const closeBtn = document.querySelector(".close-btn");
 
-  // Projects Slider
   const projectItems = document.querySelectorAll(".project-item");
-  let projectIndex = 0;
+const nextProjectBtn = document.getElementById("nextProject");
+const prevProjectBtn = document.getElementById("prevProject");
+let projectIndex = 0;
 
-  function showProject(index) {
-    projectItems.forEach((item, i) => {
-      item.classList.toggle("active", i === index);
-    });
+function showProject(index) {
+  projectItems.forEach((item, i) => {
+    item.classList.toggle("active", i === index);
+  });
+
+  // Disable/enable buttons appropriately
+  prevProjectBtn.disabled = index === 0;
+  nextProjectBtn.disabled = index === projectItems.length - 1;
+}
+
+showProject(projectIndex);
+
+nextProjectBtn.addEventListener("click", () => {
+  if (modal.style.display === "flex") modal.style.display = "none";
+  if (projectIndex < projectItems.length - 1) {
+    projectIndex++;
+    showProject(projectIndex);
   }
+});
 
-  showProject(projectIndex);
-
-  document.getElementById("nextProject").addEventListener("click", () => {
-    if (modal.style.display === "flex") modal.style.display = "none";
-    projectIndex = (projectIndex + 1) % projectItems.length;
+prevProjectBtn.addEventListener("click", () => {
+  if (modal.style.display === "flex") modal.style.display = "none";
+  if (projectIndex > 0) {
+    projectIndex--;
     showProject(projectIndex);
-  });
+  }
+});
 
-  document.getElementById("prevProject").addEventListener("click", () => {
-    if (modal.style.display === "flex") modal.style.display = "none";
-    projectIndex = (projectIndex - 1 + projectItems.length) % projectItems.length;
-    showProject(projectIndex);
-  });
 
   // Project descriptions for modal
   const projectDescriptions = {
@@ -86,6 +96,77 @@ document.querySelectorAll('.nav-links a').forEach(link => {
       top: offsetPosition,
       behavior: 'smooth'
     });
+  });
+});
+
+
+
+const activities = document.querySelectorAll('.activity');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0;
+
+function showActivity(index) {
+  activities.forEach((activity, i) => {
+    activity.classList.remove('active'); // remove all active first
+    activity.style.display = 'none';
+  });
+
+  const current = activities[index];
+  current.style.display = 'block';
+
+  // Force reflow to restart animation
+  void current.offsetWidth;
+
+  current.classList.add('active');
+
+  // Disable prev/next if at start or end
+  prevBtn.disabled = index === 0;
+  nextBtn.disabled = index === activities.length - 1;
+}
+
+
+
+prevBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showActivity(currentIndex);
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (currentIndex < activities.length - 1) {
+    currentIndex++;
+    showActivity(currentIndex);
+  }
+});
+
+showActivity(currentIndex);
+
+
+
+
+
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();  // prevent default anchor scroll
+    
+    // Remove active class from all nav links
+    navLinks.forEach(nav => nav.classList.remove('active'));
+    // Add active class to clicked link
+    link.classList.add('active');
+
+    // Get target section ID from href attribute (like "#about")
+    const targetId = link.getAttribute('href').substring(1);
+
+    // Hide all sections
+    sections.forEach(section => section.classList.remove('active'));
+    // Show the target section
+    document.getElementById(targetId).classList.add('active');
   });
 });
 

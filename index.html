@@ -20,6 +20,7 @@
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#activities">Activities</a></li>
+        <li><a href="#contact">Contact Me</a></li> 
         <li><i class="fa-solid fa-moon" id="toggleTheme"></i></li>
       </ul>
     </nav>
@@ -43,7 +44,8 @@
 
   <section id="about" class="animate">
     <h2 class="section-title">About Me</h2>
-    <p class = "about">Hardworking and self-motivated BTech Computer Science student...</p>
+    <p class = "about">Hardworking and self-motivated BTech Computer Science student (2022–2026) at Guru Nanak Institutions of Technology, with a strong passion for software development. I’m focused, goal-oriented, and always eager to learn and grow.</p>
+    <p class = "about">I have hands-on experience in Python, web technologies like HTML, CSS, and JavaScript, and basic knowledge of MySQL and frameworks like Flask. I enjoy building projects that enhance my technical skills and have taken on leadership roles in both academic and event settings. A strong team player, I remain optimistic and efficient, even in challenging situations.</p>
   </section>
 
   <section id="certifications" class="animate">
@@ -92,10 +94,71 @@
     </div>
   </section>
 
-  <section id="activities" class="animate">
-    <h2 class="section-title">Activities</h2>
-    <p>Hackathons, workshops, and tech fests.</p>
-  </section>
+
+
+<section id="activities" class="animate">
+  <h2 class="section-title">Activities</h2>
+
+  <div class="activities-wrapper">
+    <button id="prevBtn" class="nav-btn">&lt;</button>
+
+    <div class="activities-content">
+      <div class="activity active">
+        <strong>Tech Sprint – Coordinator</strong>
+        <p class="tech">Organized and managed a large-scale campus tech event with 150+ participants.</p>
+        <p class="tech1">Oversaw the complete event planning process including logistics, team coordination, scheduling, and smooth execution. Demonstrated strong organizational and leadership skills while fostering collaboration among participants and volunteers.</p>
+      </div>
+
+      <div class="activity">
+        <strong>Infosys Placement Pool Drive – Coordinator</strong>
+        <p class="tech">Led the coordination of the Infosys placement drive across Telangana, involving 1,200+ students.</p>
+        <p class="tech1">Acted as the main point of contact between students and company officials, managing logistics and communication to ensure a seamless recruitment process.</p>
+      </div>
+
+      <div class="activity">
+        <strong>Real-Time Project – Team Leader</strong>
+        <p class="tech">Directed a team in planning and delivering a real-time academic project.</p>
+        <p class="tech1">Took responsibility for task delegation, timeline management, and technical decision-making. Ensured collaborative teamwork, timely delivery, and quality results.</p>
+      </div>
+    </div>
+
+    <button id="nextBtn" class="nav-btn">&gt;</button>
+  </div>
+</section>
+
+
+<section id="contact" class="animate">
+  <h2 class="section-title">Contact Me</h2>
+  <form action="mailto:your-lasyachoudarie3@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name" placeholder="Your Name" required /><br /><br />
+
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" placeholder="Your Email" required /><br /><br />
+
+    <label for="purpose">Purpose:</label><br />
+    <textarea id="purpose" name="purpose" rows="4" placeholder="Reason for contact" required></textarea><br /><br />
+
+    <label for="phone">Phone Number:</label><br />
+    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" pattern="[0-9]{10}" /><br /><br />
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
   <script src="script.js"></script>
 </body>
