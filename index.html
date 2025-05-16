@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mandadapu Lasya</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    
+    <h1>Mandadapu Lasya</h1>
+    <p class="software">SOFTWARE DEVELOPER</p>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><i class="fa-solid fa-moon" id="toggleTheme"></i></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="content animate">
+      <h1 class="name">Hello, I am Mandadapu Lasya</h1>
+      <p>I am currently pursuing a BTech in Computer Science (2022–2026) at Guru Nanak Institutions of Technology...</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/lasya_choudhary.m?igsh=MXJmMnBjanIxYnE0cg==" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/lasya-choudhary" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/LasyaChoudhary" target="_blank" class="github"><i class="fab fa-github"></i></a>
+      </div>
+      <a href="lasya2_resume.pdf" download class="download-btn">Download CV</a>
+    </div>
+    <div class="hero-bg animate">
+      <h2><span id="role"></span></h2>
+    </div>
+  </section>
+
+  <section id="about" class="animate">
+    <h2 class="section-title">About Me</h2>
+    <p class = "about">Hardworking and self-motivated BTech Computer Science student...</p>
+  </section>
+
+  <section id="certifications" class="animate">
+    <h2 class="section-title">Certifications</h2>
+    <div class="certificates-wrapper">
+      <div class="certificates-container" id="certContainer">
+        <a href="Generative AI.pdf" target="_blank" rel="noopener" class="certificate-link">
+          Generative AI Certificate
+        </a>
+        <a href="python.pdf" target="_blank" rel="noopener" class="certificate-link">
+          Python Skill India Certificate
+        </a>
+        <a href="what is AI.pdf" target="_blank" rel="noopener" class="certificate-link">
+          Introduction to AI Certificate
+        </a>
+        <!-- Add more certificates here -->
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
+    <div class="project-item" data-title="Virtual Classroom Attendance Management System">
+      <h4>Virtual Classroom Attendance Management System</h4>
+      <p class = project>A web application built to streamline classroom attendance digitally for both students and instructors.<br>
+      Tech Stack: HTML, CSS, JavaScript, Python</p>
+      <button class="see-more">See More</button>
+    </div>
+    <div class="project-item" data-title="Weather Application">
+      <h4>Weather Application</h4>
+      <p class="project">A responsive web app for displaying real-time weather information based on user location.<br>
+      Tech Stack: HTML, CSS, JavaScript</p>
+      <button class="see-more">See More</button>
+     
+    </div>
+    <button class = "prev" id="prevProject">Prev Project</button>
+    <button class = "next" id="nextProject">Next Project</button>
+
+    <!-- Modal -->
+    <div id="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities" class="animate">
+    <h2 class="section-title">Activities</h2>
+    <p>Hackathons, workshops, and tech fests.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
